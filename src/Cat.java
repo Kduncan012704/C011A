@@ -22,8 +22,9 @@ public class Cat {
 	//Nose dimensions
 	private static final int NOSE_X = 45;
 	private static final int NOSE_Y = 55;
-	private static final int NOSE_HEIGHT = 8;
-	private static final int NOSE_WIDTH = 8;
+	//ear dimensions
+	private static final int EAR_X = 4;
+	private static final int EAR_Y = 25;
 	// draw will render the Cat on the Graphics object
 	public void draw(Graphics g, int catX, int catY)
 	{
@@ -52,8 +53,14 @@ public class Cat {
 		y = catY + NOSE_Y;
 		g2.drawPolygon(new int[] {x-10, x+10, x}, new int[] {y-10, y-10, y}, 3);
 		g2.setColor(Color.black);
+		//draw ear
+		g2.setColor(Color.gray);
+		x = catX + EAR_X;
+		y = catY + EAR_Y;
+		g2.drawPolygon(new int[] {x-25, x+15, x}, new int[] {y-25, y-15, y}, 3);
+		g2.setColor(Color.black);
 		// Meow text appears below cat head, +10 places below 
 		// so it doesn't overlap the drawing
-		g2.drawString("Mewo!", catX, catY+HEAD_DIMENSION+10);	
+		g2.drawString("Mewo!", catX, catY+HEAD_DIMENSION+10);
 	}
 }
