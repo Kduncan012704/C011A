@@ -31,9 +31,11 @@ public class Cat {
 		Graphics2D g2 = (Graphics2D) g;
 		int x=catX;
 		int y=catY;
+		
 		// Draw the head
 		g2.setColor(Color.lightGray);
 		g2.fillOval(x, y, HEAD_DIMENSION, HEAD_DIMENSION);
+		
 		// Draw the eyes
 		g2.setColor(Color.yellow);
 		x = catX + EYE_X; 
@@ -41,24 +43,30 @@ public class Cat {
 		g2.fillOval(x, y, EYE_WIDTH, EYE_HEIGHT);
 		x += EYE_SEPARATION;
 		g2.fillOval(x, y, EYE_WIDTH, EYE_HEIGHT);
+		
 		// Draw the mouth
 		g2.setColor(Color.red);
 		x = catX + MOUTH_X;
 		y = catY + MOUTH_Y;
 		g2.fillOval(x, y, MOUTH_WIDTH, MOUTH_HEIGHT);
 		g2.setColor(Color.black);
+		
 		//draw nose
 		g2.setColor(Color.pink);
 		x = catX + NOSE_X;
 		y = catY + NOSE_Y;
 		g2.drawPolygon(new int[] {x-10, x+10, x}, new int[] {y-10, y-10, y}, 3);
-		g2.setColor(Color.black);
+		
 		//draw ear
 		g2.setColor(Color.gray);
 		x = catX + EAR_X;
 		y = catY + EAR_Y;
 		g2.drawPolygon(new int[] {x-25, x+15, x}, new int[] {y-25, y-15, y}, 3);
-		g2.setColor(Color.black);
+		
+		
+		g2.setColor(Color.pink);
+		g2.drawPolygon(new int[] {x-20, x+10, x}, new int[] {y-22, y-12, y-5}, 3);
+		
 		// Meow text appears below cat head, +10 places below 
 		// so it doesn't overlap the drawing
 		g2.drawString("Mewo!", catX, catY+HEAD_DIMENSION+10);
