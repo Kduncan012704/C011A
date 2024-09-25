@@ -57,13 +57,23 @@ public class Cat {
 		y = catY + NOSE_Y;
 		g2.drawPolygon(new int[] {x-10, x+10, x}, new int[] {y-10, y-10, y}, 3);
 		
-		//draw ear
+		//draw ear 1
 		g2.setColor(Color.gray);
 		x = catX + EAR_X;
 		y = catY + EAR_Y;
 		g2.drawPolygon(new int[] {x-25, x+15, x}, new int[] {y-25, y-15, y}, 3);
 		
+		//inner ear 1
+		g2.setColor(Color.pink);
+		g2.drawPolygon(new int[] {x-20, x+10, x}, new int[] {y-22, y-12, y-5}, 3);
 		
+		//draw ear 2
+		g2.setColor(Color.gray);
+		x = 150;
+		y = 80;
+		g2.drawPolygon(new int[] {x, x-25, x+15}, new int[] {y, y-25, y-15}, 3);
+				
+		//inner ear 2
 		g2.setColor(Color.pink);
 		g2.drawPolygon(new int[] {x-20, x+10, x}, new int[] {y-22, y-12, y-5}, 3);
 		
