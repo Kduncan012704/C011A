@@ -17,9 +17,13 @@ public class Cat {
 	private static final int MOUTH_HEIGHT = 10;
 	private static final int MOUTH_WIDTH = HEAD_DIMENSION/4;
 	// mouth starts about 40% from left edge of head
-	private static final int MOUTH_X = HEAD_DIMENSION/5 * 2;
-	private static final int MOUTH_Y = HEAD_DIMENSION/5 * 3;
-	
+	private static final int MOUTH_X = HEAD_DIMENSION/5 * (5/2);
+	private static final int MOUTH_Y = HEAD_DIMENSION/5 * (7/2);
+	//Nose dimensions
+	private static final int NOSE_X = 46;
+	private static final int NOSE_Y = 45;
+	private static final int NOSE_HEIGHT = 8;
+	private static final int NOSE_WIDTH = 8;
 	// draw will render the Cat on the Graphics object
 	public void draw(Graphics g, int catX, int catY)
 	{
@@ -37,10 +41,16 @@ public class Cat {
 		x += EYE_SEPARATION;
 		g2.fillOval(x, y, EYE_WIDTH, EYE_HEIGHT);
 		// Draw the mouth
-		g2.setColor(Color.pink);
+		g2.setColor(Color.red);
 		x = catX + MOUTH_X;
 		y = catY + MOUTH_Y;
 		g2.fillOval(x, y, MOUTH_WIDTH, MOUTH_HEIGHT);
+		g2.setColor(Color.black);
+		//draw nose
+		g2.setColor(Color.pink);
+		x = catX + NOSE_X;
+		y = catY + NOSE_Y;
+		g2.fillOval(x, y, NOSE_WIDTH, NOSE_HEIGHT);
 		g2.setColor(Color.black);
 		// Meow text appears below cat head, +10 places below 
 		// so it doesn't overlap the drawing
